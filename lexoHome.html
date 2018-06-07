@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+ </head>
+    <meta charset="utf-8">
+    <title>Prova Lemmata App For Lexo</title>
+  
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+   
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    
+   
+    <link href="./css/base-admin-3.css" rel="stylesheet">
+
+<script src="./js/appForLexo.js"></script>
+
+</head>
+
+<body  ng-controller="lexoController"> 
+
+ <div class="container">
+      <div class="row"> 	
+      	<div class="col-md-12">	
+      		<div class="widget stacked widget-table">			
+					<div class="widget-header">
+						<h3>Lemmas</h3>
+						 
+					</div> <!-- .widget-header -->	
+					<div class="widget-content">
+						<table class="table table-bordered table-striped">		
+							<thead>							
+								<th>writtenRep</th>
+								<th>root</th>
+								<th>shortForm</th>
+								<th>senses</th>
+								<th style="border:0px">								
+									<form class="navbar-form navbar-center">
+      									<div class="form-group">
+        									<input type="text"  class="form-control input-sm search-query" placeholder="Search">
+      									</div>
+      									&nbsp;&nbsp;&nbsp;&nbsp;
+      									<button type="submit" class="btn btn-success" ng-click="getLemmata()"> List Lemmas </button>      									
+    					  			</form>								
+								</th>
+							</thead>
+						
+								<tr>
+						   
+							<td class="description">{{lemma.writtenRep}}</td>
+							<td class="description">{{lemma.root}}</td>
+							<td class="description">{{lemma.shortForm}}</td>
+							<td class="description">{{lemma.senses}}</td>
+							<td class="description">
+							    <button type="submit" class="btn btn-success" ng-click="viewLemma('آدَبَ')">View More Properties</button>
+							</td>
+						</tr>
+						<tbody>
+							
+						<tr>
+						   <tr ng-repeat="lemma in lemmaList" >
+							<td class="description">{{lemma}}</td>
+							<td class="description">{{lemma}}</td>
+							<td class="description">{{lemma}}</td>
+							<td class="description">{{lemma}}</td>
+							<td class="description">
+							<button type="submit" class="btn btn-success">View</button>
+							</td>
+						</tr>
+						
+					</tbody></table>
+						<div class="status">
+                            {{lemmaList}}
+                        </div>
+					</div> <!-- .widget-content -->
+					
+				</div> <!-- /widget -->	
+      			
+  			</div> <!-- /col-md-12 -->
+  		</div> <!-- /row -->	
+  	</div> <!-- /container -->		
+</div> <!-- /main -->
+
+</body>
+</html>
